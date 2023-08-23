@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>registration</title>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <form action="." method="POST">
+      {% csrf_token %}
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">First name</label>
+      <input type="text" class="form-control" id="validationDefault01" placeholder="First name"  name="first_name" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="last_name" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefaultUsername">email address</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend2">@</span>
+        </div>
+        <input type="email" class="form-control" id="validationDefaultUsername" placeholder="email" aria-describedby="inputGroupPrepend2" name="email" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault03">Username</label>
+      <input type="text" class="form-control" id="validationDefault03" placeholder="username" name="username" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault04">Password</label>
+      <input type="password" class="form-control" id="validationDefault04" name="password" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationDefault05">Confirm password</label>
+      <input type="password" class="form-control" id="validationDefault05" name="password1" required>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
+  {% for msg in messages %}
+  {{msg}}
+  {% endfor %}
+
+  </body>
+</html>
